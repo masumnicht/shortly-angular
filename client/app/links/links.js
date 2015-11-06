@@ -1,5 +1,11 @@
-angular.module('shortly.links', [])
+// var Links = require ('../../server/links/linkController');
+var linkModule = angular.module('shortly.links', []);
 
-.controller('LinksController', function ($scope, Links) {
-  // Your code here
+
+linkModule.controller('LinksController', function ($scope, Links) {
+  // add data and a getLinks method
+  // $scope.data = Links;
+  // $scope.getLinks = function () {
+    //do something
+  };
 });
