@@ -7,7 +7,7 @@ angular.module('shortly', [
 ])
 .config(function ($routeProvider, $httpProvider) {
   $routeProvider
-    .when('/', {
+    .when('/*', {
       templateUrl: 'app/links/links.html',
       controller: 'LinksController'
     })

@@ -1,7 +1,7 @@
 <div id='container' ng-controller ='LinksController' ng-init = 'getLinks()'>
   <!-- Your html here -->
   <input type='text' placeholder='Search' ng-model='name'/>
-  <div class='link' ng-repeat='link in data.links | filter:name'>
+  <div class='link' ng-repeat='link in data.links | filter:name track by $index'>
     <!-- <ul class='link' ng-click="incrementVisits(link.code)"> -->
       <img src='../assets/redirect_icon.png'/>
       <div class='info'>

@@ -11,11 +11,5 @@ angular.module('shortly.links', [])
       $scope.data.links = data;
     });
   };
-  $scope.incrementVisits = function(url) {
-    console.log(url);
-    Links.goToLink(url).then(function (data) {
-      //MAKE IT WORK
-      console.log("Worked", data);
-    });
-  }
+  $scope.getLinks();
 });
