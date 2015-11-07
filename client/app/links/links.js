@@ -3,9 +3,14 @@ angular.module('shortly.links', [])
 .controller('LinksController', function ($scope, Links) {
   // add data and a getLinks method
   $scope.data = {
-    url: ""
+    links: []
   };
+  // $scope.links = [];
+
   $scope.getLinks = function () {
-    Links.getLinks();
+    Links.getLinks().then(function (data) {
+      $scope.data.links.push(data);
+    });
+    console.log($scope.data.links);
   };
 });

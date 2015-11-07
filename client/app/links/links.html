@@ -1,4 +1,7 @@
-<div id='container' ng-controller ='LinksController'>
+<div id='container' ng-controller ='LinksController' ng-init = 'getLinks()'>
   <!-- Your html here -->
-  <input type='text' ng-model='data.url' placeholder='Search'/>
+  <input type='text' placeholder='Search'/>
+  <div ng-repeat='link in data.links track by $index'>
+    <li class = 'link'> {{ link }} </li>
+  </div>
 </div>
