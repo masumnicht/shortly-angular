@@ -6,8 +6,6 @@ angular.module('shortly.links', [])
     url: ""
   };
   $scope.getLinks = function () {
-    //do something
-    Links
-
+    Links.getLinks();
   };
 });

@@ -2,25 +2,31 @@ angular.module('shortly.services', [])
 
 .factory('Links', function ($http) {
   // Your code here
-  var getLinks = function (link) {
+  var getLinks = function () {
     return $http({
       method: 'GET',
-      url: '/api/:code',
-      data: link 
+      url: '/api/links/'
     })
     .then(function (resp) {
-      return resp.data.url;
+      return resp.data.links;
     });
   };
-  var addLink = function (link) {
+  var addLink = function ($scope, link) {
+    console.log(link);
     return $http({
       method: 'POST',
-      url: '/api/:code',
-      data: link
+      url: '/api/links/',
+      data: $scope.link,
+      headers: {'Content-Type': 'application/json'}
     })
     .then(function (resp) {
-      return resp.data.code;
+      console.log(resp);
+      return resp.data; // check code
     });
+  };
+  return {
+    getLinks: getLinks,
+    addLink: addLink
   };
 })
 .factory('Auth', function ($http, $location, $window) {
