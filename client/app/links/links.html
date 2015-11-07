@@ -1,7 +1,15 @@
 <div id='container' ng-controller ='LinksController' ng-init = 'getLinks()'>
   <!-- Your html here -->
-  <input type='text' placeholder='Search'/>
-  <div ng-repeat='link in data.links track by $index'>
-    <li class = 'link'> {{ link }} </li>
+  <input type='text' placeholder='Search' ng-model='name'/>
+  <div class='link' ng-repeat='link in data.links | filter:name'>
+    <!-- <ul class='link' ng-click="incrementVisits(link.code)"> -->
+      <img src='../assets/redirect_icon.png'/>
+      <div class='info'>
+        <div class='visits'><span class='count'>{{link.visits}}</span>Visits</div>
+        <div class='title'>{{link.title}}</div>
+        <div class='original'>{{link.url}}</div>
+        <a>{{link.base_url}}/{{link.code}}</a>
+      </div>
+    <!-- </ul> -->
   </div>
 </div>

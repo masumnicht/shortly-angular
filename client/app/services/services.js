@@ -25,9 +25,19 @@ angular.module('shortly.services', [])
       return resp.data;
     });
   };
+  var goToLink = function(code) {
+    return $http({
+      method: 'GET',
+      url: '/api/:'+code
+    })
+    .then(function(resp){
+      return resp.data;
+    })
+  };
   return {
     getLinks: getLinks,
-    addLink: addLink
+    addLink: addLink,
+    goToLink: goToLink
   };
 })
 .factory('Auth', function ($http, $location, $window) {
